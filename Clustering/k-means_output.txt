@@ -1,0 +1,102 @@
+=== Run information ===
+
+Scheme:       weka.clusterers.SimpleKMeans -init 0 -max-candidates 100 -periodic-pruning 10000 -min-density 2.0 -t1 -1.25 -t2 -1.0 -N 8 -A "weka.core.ManhattanDistance -R first-last" -I 500 -num-slots 1 -S 10
+Relation:     obeyesdad-weka.filters.supervised.instance.SMOTE-C0-K5-P300.0-S1-weka.filters.supervised.instance.SMOTE-C1-K5-P300.0-S1-weka.filters.supervised.instance.SMOTE-C1-K5-P100.0-S1-weka.filters.supervised.instance.SMOTE-C3-K5-P100.0-S1-weka.filters.supervised.instance.SMOTE-C3-K5-P150.0-S1-weka.filters.supervised.instance.SMOTE-C4-K5-P150.0-S1-weka.filters.supervised.instance.SMOTE-C4-K5-P100.0-S1-weka.filters.supervised.instance.SMOTE-C5-K5-P150.0-S1-weka.filters.supervised.instance.SMOTE-C5-K5-P200.0-S1-weka.filters.supervised.instance.SMOTE-C6-K5-P200.0-S1-weka.filters.supervised.instance.SMOTE-C6-K5-P200.0-S1-weka.filters.supervised.instance.SMOTE-C6-K5-P200.0-S1-weka.filters.supervised.instance.SMOTE-C7-K5-P200.0-S1-weka.filters.supervised.instance.SMOTE-C7-K5-P200.0-S1-weka.filters.supervised.instance.SMOTE-C7-K5-P200.0-S1-weka.filters.unsupervised.attribute.InterquartileRange-Rfirst-last-O3.0-E6.0-P-weka.filters.unsupervised.instance.RemoveWithValues-S0.0-C18-Llast-weka.filters.unsupervised.instance.RemoveWithValues-S0.0-C26-Llast-weka.filters.unsupervised.attribute.Remove-R18-33-weka.filters.unsupervised.attribute.Remove-V-R1,2,4,5,7,8,9,11,13,14,17-weka.filters.unsupervised.attribute.Normalize-S1.0-T0.0
+Instances:    1762
+Attributes:   11
+              Gender
+              Age
+              Weight
+              family_history_with_overweight
+              FCVC
+              NCP
+              CAEC
+              CH2O
+              FAF
+              TUE
+Ignored:
+              NObeyesdad
+Test mode:    Classes to clusters evaluation on training data
+
+=== Clustering model (full training set) ===
+
+
+kMeans
+======
+
+Number of iterations: 22
+Sum of within cluster distances: 2042.3619142356404
+
+Initial starting points (random):
+
+Cluster 0: Female,0.033333,0.350746,yes,1,0.572509,Sometimes,0,1,1
+Cluster 1: Female,0.388441,0.529338,yes,1,0.572509,Sometimes,0.305236,0.009909,0.236172
+Cluster 2: Female,0.376314,0.490837,yes,1,0.572509,Sometimes,0.149597,0.078101,0.473444
+Cluster 3: Male,0.582816,0.325275,yes,0.897543,0.679582,Sometimes,0.183938,0.007653,0
+Cluster 4: Male,0.366667,0.238806,yes,0.5,0.572509,Frequently,0.5,0,0
+Cluster 5: Female,0.207513,0.042103,no,1,0.511715,Frequently,0,0.251549,0
+Cluster 6: Female,0.4,0.535853,yes,1,0.572509,Sometimes,0.852425,0,0.121669
+Cluster 7: Female,0.2,0.104478,yes,0.5,1,Frequently,0.5,0.333333,0.5
+
+Missing values globally replaced with mean/mode
+
+Final cluster centroids:
+                                              Cluster#
+Attribute                         Full Data          0          1          2          3          4          5          6          7
+                                   (1762.0)    (153.0)     (89.0)    (154.0)    (425.0)    (453.0)    (170.0)    (199.0)    (119.0)
+===================================================================================================================================
+Gender                                 Male     Female     Female     Female       Male       Male     Female     Female     Female
+Age                                  0.2973     0.2333     0.7824     0.2322     0.4017     0.2491     0.1769        0.4     0.2342
+Weight                               0.3484     0.2693     0.2853     0.7059     0.5025     0.3314     0.0821     0.5296     0.1045
+family_history_with_overweight          yes        yes        yes        yes        yes        yes         no        yes        yes
+FCVC                                 0.7126     0.5539        0.5          1     0.7213        0.5     0.9457          1        0.5
+NCP                                  0.5725     0.5725     0.5725     0.5725     0.5725     0.5725     0.5725     0.5725     0.5725
+CAEC                              Sometimes  Sometimes  Sometimes  Sometimes  Sometimes  Sometimes  Sometimes  Sometimes Frequently
+CH2O                                    0.5        0.5     0.2862     0.6537      0.514        0.5     0.4381     0.7766        0.5
+FAF                                  0.3333     0.3333          0     0.5032     0.3701     0.3333     0.3769     0.0001     0.3333
+TUE                                  0.3278        0.5          0      0.409     0.0188        0.5        0.5     0.2223        0.5
+
+
+
+
+Time taken to build model (full training data) : 0.03 seconds
+
+=== Model and evaluation on training set ===
+
+Clustered Instances
+
+0       153 (  9%)
+1        89 (  5%)
+2       154 (  9%)
+3       425 ( 24%)
+4       453 ( 26%)
+5       170 ( 10%)
+6       199 ( 11%)
+7       119 (  7%)
+
+
+Class attribute: NObeyesdad
+Classes to Clusters:
+
+Total 	|  0   1   2   3   4   5   6   7  <-- assigned to cluster
+-----------------------------------------
+231	|  1   0   2  20  61  89   0  58 | Insufficient_Weight
+233	| 20   6   5  24  76  50   4  48 | Normal_Weight
+210	| 38  24   0  30  78  27   5   8 | Overweight_Level_I
+225	| 49  17   4  44  99   3   6   3 | Overweight_Level_II
+268	| 45  42   3  83  93   0   0   2 | Obesity_Type_I
+271	|  0   0   0 224  45   1   1   0 | Obesity_Type_II
+324	|  0   0 140   0   1   0 183   0 | Obesity_Type_III
+-----------------------------------------
+	| 153  89 154 425 453 170 199 119 | Total
+
+Cluster 0 <-- Overweight_Level_I
+Cluster 1 <-- Obesity_Type_I
+Cluster 2 <-- No class
+Cluster 3 <-- Obesity_Type_II
+Cluster 4 <-- Overweight_Level_II
+Cluster 5 <-- Insufficient_Weight
+Cluster 6 <-- Obesity_Type_III
+Cluster 7 <-- Normal_Weight
+
+Incorrectly clustered instances :	1039.0	 58.9671 %
